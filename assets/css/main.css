@@ -592,9 +592,7 @@ section a:hover {
   padding: 0;
   margin-top: 20px;
 }
-.ds-numbervalulist li {
-  margin-right: 60px;
-}
+
 .ds-numbervalulist li:last-child {
   margin-right: 0;
 }
