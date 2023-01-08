@@ -3,7 +3,7 @@
   --dark-layout-color: #d4ddea;
 
   --text-dark: #373737;
-  --dark-text-main: #f8f0e3;
+  --dark-text-main: #f5f5f5;
 }
 
 /*
@@ -28,7 +28,7 @@ layout color blue white  #D4DDEA
 /** DARK THEME **/
 
 body.dark-theme {
-  background-color: #1c1e30;
+  background-color: #161728;
   color: var(--dark-text-main);
 }
 
@@ -38,7 +38,7 @@ body.dark-theme #banner img {
 
 body.dark-theme .ds-social li a {
   background-color: var(--dark-layout-color);
-  color: #1c1e30;
+  color: #161728;
 }
 
 body.dark-theme .ds-numbervalulist strong {
@@ -58,8 +58,17 @@ body.dark-theme span.skill {
   border: 2px solid var(--dark-layout-color);
 }
 
-body.dark-theme .ds-banner section h1 {
-  color: #f5f5f5;
+body.dark-theme .ds-banner section h1.name {
+  color: #ccccce;
+}
+
+body.dark-theme .ds-banner section h1.teaser {
+  color: #8e8f94;
+}
+
+body.dark-theme .ds-banner section .welcome-header span,
+body.dark-theme .ds-numbervalulist span {
+  color: #909497;
 }
 
 body.dark-theme .ds-heading {
@@ -71,7 +80,7 @@ body.dark-theme .ds-technologies-list li {
   color: #f5f5f5;
   font-size: 16px;
   padding: 10px 20px;
-  background-color: #1c1e30;
+  background-color: #131420;
   border: 1px solid #414468;
   border-radius: 27px;
   margin-right: 15px;
@@ -94,7 +103,7 @@ body.dark-theme .ds-button {
 
 body.dark-theme .ds-button:hover {
   background-color: var(--dark-layout-color);
-  color: #1c1e30;
+  color: #131420;
 }
 
 body.dark-theme .ds-project-tags li {
@@ -119,11 +128,16 @@ body.dark-theme a:focus {
 }
 
 body.dark-theme .ds-header {
-  background-color: #1c1e30;
+  background-color: #161728;
 }
 
 body.dark-theme table {
   color: var(--dark-text-main);
+}
+
+body.dark-theme .ds-about-section p a {
+  color: #909497;
+  background-image: linear-gradient(#909497, #909497);
 }
 
 @media (max-width: 768px) {
@@ -136,7 +150,7 @@ body.dark-theme table {
   }
 
   body.dark-theme .ds-header-inner ul.nav {
-    background: #1c1e30;
+    background: #131420;
   }
 }
 
@@ -166,7 +180,7 @@ body {
 }
 
 #banner img {
-  max-width: 280px;
+  max-width: 260px;
   border-radius: 100%;
   box-shadow: 5px 5px 8px var(--layout-color);
 }
@@ -291,6 +305,10 @@ img {
   transition-timing-function: ease;
 }
 
+.ds-banner .row {
+  align-items: center;
+}
+
 section a,
 section a:hover {
   text-decoration: none;
@@ -395,19 +413,176 @@ section a:hover {
 .ds-banner section {
   padding-left: 60px;
 }
-.ds-banner section h1 span {
+.ds-banner section .welcome-header span {
   display: block;
   letter-spacing: 1px;
   font-weight: 500;
-
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #343a40;
 }
+
+.welcome-header span {
+  display: block;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #343a40;
+}
+
 .ds-banner section h1 {
   font-weight: 600;
-  font-size: 32px;
-  line-height: 54px;
+  font-size: 28px;
+  margin-bottom: 0px;
+  line-height: 1.4;
   color: #292d32;
+  letter-spacing: 0.3px;
 }
+
+@keyframes slidein {
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ds-banner .welcome-header span,
+.ds-banner .welcome-header .name,
+.ds-numbervalulist li,
+.ds-banner p,
+.ds-skills-section .row > div,
+.ds-experience-section .row > div,
+.ds-experience-section .ds-heading,
+.ds-header .ds-social,
+.ds-header ul.nav li.item,
+.ds-header #color-mode-toggle,
+.ds-banner figure,
+.ds-education-section .row > div,
+.ds-education-section .ds-heading,
+.ds-publication-section .row,
+.ds-publication-section .ds-heading,
+.ds-work-section .ds-work-list-section,
+.ds-work-section .ds-heading {
+  animation: slidein 1s ease-out forwards;
+  opacity: 0;
+  transform-style: perspective(500px);
+  transform: translate3d(-35px, -40px, -150px) rotate3d(1, -1, 0, 35deg);
+}
+
+.ds-header .ds-social {
+  animation-delay: 400ms;
+}
+
+.ds-header ul.nav li.item:nth-child(1) {
+  animation-delay: 500ms;
+}
+
+.ds-header ul.nav li.item:nth-child(2) {
+  animation-delay: 600ms;
+}
+
+.ds-header ul.nav li.item:nth-child(3) {
+  animation-delay: 700ms;
+}
+
+.ds-header ul.nav li.item:nth-child(4) {
+  animation-delay: 800ms;
+}
+
+.ds-header #color-mode-toggle {
+  animation-delay: 900ms;
+}
+
+.ds-banner figure {
+  animation-delay: 900ms;
+}
+
+.ds-banner .welcome-header span {
+  animation-delay: 1000ms;
+}
+
+.ds-banner .welcome-header .name {
+  animation-delay: 1100ms;
+}
+
+.ds-numbervalulist li:nth-child(1) {
+  animation-delay: 1200ms;
+}
+
+.ds-numbervalulist li:nth-child(2) {
+  animation-delay: 1300ms;
+}
+
+.ds-numbervalulist li:nth-child(3) {
+  animation-delay: 1400ms;
+}
+
+.ds-banner p {
+  animation-delay: 1500ms;
+}
+
+.ds-skills-section .row > div:nth-child(1) {
+  animation-delay: 1600ms;
+}
+
+.ds-skills-section .row > div:nth-child(2) {
+  animation-delay: 1700ms;
+}
+
+.ds-experience-section .ds-heading {
+  animation-delay: 1800ms;
+}
+
+.ds-experience-section .row > div:nth-child(1) {
+  animation-delay: 1900ms;
+}
+
+.ds-experience-section .row > div:nth-child(2) {
+  animation-delay: 2000ms;
+}
+
+.ds-education-section .ds-heading {
+  animation-delay: 2100ms;
+}
+
+.ds-education-section .row > div:nth-child(1) {
+  animation-delay: 2200ms;
+}
+
+.ds-education-section .row > div:nth-child(2) {
+  animation-delay: 2300ms;
+}
+
+.ds-publication-section .ds-heading {
+  animation-delay: 2400ms;
+}
+
+.ds-publication-section .row {
+  animation-delay: 2500ms;
+}
+
+.ds-work-section .ds-heading {
+  animation-delay: 2600ms;
+}
+
+.ds-work-section .ds-work-list-section {
+  animation-delay: 2700ms;
+}
+
+.ds-about-section h1 {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 0px;
+  line-height: 1.4;
+  color: #292d32;
+  letter-spacing: 0.3px;
+}
+
+.ds-banner section h1.name {
+  color: #151710;
+}
+
 .ds-numbervalulist {
   list-style: none;
   display: flex;
@@ -415,7 +590,7 @@ section a:hover {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .ds-numbervalulist li {
   margin-right: 60px;
@@ -425,19 +600,20 @@ section a:hover {
 }
 .ds-numbervalulist strong {
   color: var(--layout-color);
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 800;
 }
 .ds-numbervalulist span {
   font-size: 20px;
   letter-spacing: 1px;
+  color: #343a40;
 }
 /*-----------------------------------------------------------------
   3. >>> About Style
 ----------------------------------------------------------------*/
 .ds-about-section {
   padding-top: 80px;
-  padding-bottom: 100px;
+  padding-bottom: 90px;
 }
 .ds-heading {
   display: inline-block;
@@ -450,12 +626,19 @@ section a:hover {
   padding-bottom: 7px;
   margin-bottom: 23px;
 }
+
 .ds-about-section p {
   color: var(--text-main);
-  font-size: 24px;
-  line-height: 40px;
+  font-size: 20px;
   font-weight: 300;
-  margin-bottom: 60px;
+  margin-top: 40px;
+}
+
+.ds-about-section p a {
+  text-decoration: none;
+  color: #343a40;
+  font-weight: 600;
+  background-image: linear-gradient(#343a40, #343a40);
 }
 
 p {
@@ -688,7 +871,7 @@ body.dark-theme .mode-toggle-inner::after {
 .ds-education-list span {
   display: block;
 }
-span.ds-year {
+.year-country span {
   color: var(--text-main);
   font-size: 14px;
   font-weight: 700;
@@ -878,6 +1061,29 @@ span.ds-department {
   color: var(--layout-color);
 }
 
+@media (max-width: 992px) {
+  .ds-banner .row {
+    flex-direction: column;
+  }
+
+  .ds-banner section .welcome-header {
+    padding-top: 40px;
+    text-align: center;
+  }
+
+  .ds-banner section {
+    padding-left: 0px;
+  }
+
+  .ds-numbervalulist {
+    justify-content: center;
+  }
+
+  .ds-numbervalulist li {
+    padding: 3px 0;
+  }
+}
+
 /*-------------------------------------------------------------------------------
  Responsive XS Style @media (max-width: 767px) 
 -------------------------------------------------------------------------------*/
@@ -1000,6 +1206,11 @@ span.ds-department {
   .ds-header.ds-fixed-header {
     padding: 0;
   }
+
+  .ds-about-section {
+    padding-top: 40px;
+  }
+
   .ds-banner,
   .ds-about-section,
   .ds-skills-section,
@@ -1015,6 +1226,7 @@ span.ds-department {
   .ds-banner figure {
     padding: 30px 0;
   }
+
   .ds-banner section {
     padding-left: 0;
     padding-right: 0;
@@ -1024,21 +1236,29 @@ span.ds-department {
   }
   .ds-banner section h1,
   .ds-work-det-title {
-    font-size: 30px;
+    font-size: 26px;
     line-height: 40px;
   }
   .ds-numbervalulist {
     margin-top: 20px;
+    text-align: center;
   }
-  .ds-numbervalulist li {
-    margin-right: 30px;
-  }
+
   .ds-numbervalulist strong {
-    font-size: 30px;
+    font-size: 22px;
   }
   .ds-numbervalulist span {
     font-size: 14px;
   }
+
+  p {
+    font-size: 16px;
+  }
+
+  .ds-officename {
+    font-size: 22px;
+  }
+
   .ds-about-section {
     padding-bottom: 60px;
   }
